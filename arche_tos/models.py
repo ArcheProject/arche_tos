@@ -32,7 +32,7 @@ class TOSManager(object):
         Terms can also have versions.
     """
     grace_seconds = 60*10
-    check_interval = 60*60*24
+    check_interval = 60*60
     logger = logger # Testing injection
 
     def __init__(self, request):
