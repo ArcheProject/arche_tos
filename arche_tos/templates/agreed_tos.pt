@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="view.macro('arche:templates/base_view.pt', 'arche:templates/inline.pt')"
+      i18n:domain="arche_tos">
+<body>
+<div metal:fill-slot="main-content">
+
+    <h1 i18n:translate="">
+        Agreed terms of service
+    </h1>
+
+
+    <tal:nothing condition="not (active_tos or inactive_tos)">
+        <p i18n:translate="">You haven't agreed to any terms</p>
+    </tal:nothing>
+
+    <tal:iter repeat="(tos, date) active_tos">
+      <h3>${tos.title}</h3>
+      <div>${structure: tos.body}</div>
+      <hr/>
+      <p>
+        <tal:ts i18n:translate="">You agreed to this on
+          <tal:ts i18n:name="date">${date}</tal:ts></tal:ts>
+        <a href="${request.resource_url(context, 'revoke_agreement', query={'tos': tos.uid})}"
+           class="text-danger">Revoke agreement...</a>
+      </p>
+      <hr/>
+    </tal:iter>
+
+    <tal:inactive condition="inactive_tos">
+
+        <p><a data-toggle="collapse" href="#inactive-tos-collapse" aria-expanded="false" aria-controls="inactive-tos-collapse">Show older versions...</a></p>
+
+        <div class="collapse" id="inactive-tos-collapse">
+            &nbsp; <!-- <- Keep to stop annoying resize effect -->
+            <tal:iter repeat="(tos, date) inactive_tos">
+              <h3>${tos.title}</h3>
+              <div>${structure: tos.body}</div>
+              <hr/>
+              <p>
+                <tal:ts i18n:translate="">You agreed to this on
+                  <tal:ts i18n:name="date">${date}</tal:ts></tal:ts>
+                <a data-open-modal
+                   href="${request.resource_url(tos, 'revoke_agreement')}"
+                   class="text-danger">Revoke agreement...</a>
+              </p>
+              <hr/>
+            </tal:iter>
+
+        </div>
+    </tal:inactive>
+
+    <div class="well">
+        <a href="${request.resource_url(context)}"
+           class="btn btn-default"
+           i18n:translate="">Back to profile</a>
+    </div>
+
+</div>
+</body>
+</html>

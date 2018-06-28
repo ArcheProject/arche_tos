@@ -1,0 +1,3 @@
+[run]
+source = arche_tos
+omit = arche_tos/test*
