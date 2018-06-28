@@ -3,7 +3,6 @@ from arche import _
 
 import colander
 import deform
-
 from arche.schemas import maybe_modal_form, default_now
 from arche.validators import deferred_current_password_validator
 

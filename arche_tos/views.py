@@ -5,7 +5,6 @@ from pyramid.httpexceptions import HTTPFound, HTTPNotFound
 from pyramid.renderers import render
 from pyramid.response import Response
 from pyramid.security import forget
-from pyramid.security import NO_PERMISSION_REQUIRED
 from arche.security import PERM_VIEW, PERM_EDIT
 from arche.interfaces import IFlashMessages
 from arche.interfaces import IRoot
@@ -15,7 +14,7 @@ from arche.views.base import button_cancel
 from arche.views.base import BaseView
 
 from arche_tos.exceptions import TermsNotAccepted
-from arche_tos.interfaces import ITOS, IAgreedTOS
+from arche_tos.interfaces import ITOS
 from arche_tos.interfaces import ITOSManager
 from arche_tos import _
 

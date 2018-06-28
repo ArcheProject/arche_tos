@@ -18,7 +18,6 @@ from arche_tos.fanstatic_lib import terms_modal
 from arche_tos.interfaces import ITOSManager
 from arche_tos.exceptions import TermsNeedAcceptance
 from arche_tos.exceptions import TermsNotAccepted
-from arche_tos import _
 
 
 logger = getLogger(__name__)
@@ -41,7 +40,6 @@ class TOSManager(object):
 
     def check_terms(self):
         if self.needs_check():
-            print("CHECK")
             # Skip check for admins
             if not self.request.has_permission(PERM_MANAGE_SYSTEM, self.request.root):
                 # Find TOS that needs to be accepted
