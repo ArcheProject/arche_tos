@@ -119,7 +119,7 @@ class TOSSchema(colander.Schema):
         colander.String(),
         title=_("Consequences of revoking the agreement"),
         description=_("revoke_body_description",
-                      default="Will be displayed when the revocation for "
+                      default="Will be displayed when the revocation form "
                               "is shown to inform of the consequences. "
                               "If the conseqences are severe, please do express that here!"),
         widget=deform.widget.RichTextWidget(),

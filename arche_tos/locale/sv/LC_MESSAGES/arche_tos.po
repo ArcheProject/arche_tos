@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-07-01 12:00+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: arche_tos/schemas.py:18
+msgid "I've read the full agreement and I agree to it"
+msgstr "Jag har läst alla villkor och godkänner dem"
+
+#: arche_tos/schemas.py:19
+msgid "You must agree to the terms to use this site."
+msgstr "Du måste acceptera användarvillkoren för att använda sidan."
+
+#: arche_tos/schemas.py:23
+msgid "I understand the consequences"
+msgstr "Jag förstår konsekvenserna"
+
+#: arche_tos/schemas.py:34
+msgid "Wrong sentence"
+msgstr "Fel mening"
+
+#: arche_tos/schemas.py:40
+#, python-format
+msgid "Type '${sentence}' to confirm that you want to do this."
+msgstr "Skriv '${sentence}' för att bekräfta att du vill göra detta."
+
+#: arche_tos/schemas.py:47
+msgid "Type confirmation"
+msgstr "Skriv bekräftelse"
+
+#: arche_tos/schemas.py:53
+msgid "I understand the consequences and want to revoke my agreement."
+msgstr ""
+"Jag förstår konsekvenserna och vill återkalla mitt medgivande till villkoren."
+
+#: arche_tos/schemas.py:54
+msgid "Read above and tick here if you want to do this."
+msgstr "Läs ovan och klicka i här om du vill göra det här."
+
+#: arche_tos/schemas.py:58
+msgid "Password check due to severe consequences of revoking this"
+msgstr "Kolla lösenord pga grava konsekvenser av tillbakadraget medgivande"
+
+#: arche_tos/schemas.py:93
+msgid "Any language"
+msgstr "Alla språk"
+
+#: arche_tos/schemas.py:106
+msgid "Title"
+msgstr "Titel"
+
+#: arche_tos/schemas.py:110
+msgid "Text to agree to"
+msgstr "Text att ge sitt medgivande till"
+
+#: arche_tos/schemas.py:115
+msgid "Collapse agreement text?"
+msgstr "Kollapsa villkorstext?"
+
+#: arche_tos/schemas.py:116
+msgid "Causes a read full text link to be displayed instead."
+msgstr "Skapar länk för att läsa hela avtalet istället för att visa det."
+
+#: arche_tos/schemas.py:120 arche_tos/templates/revoke_tos_consequence.pt:12
+msgid "Consequences of revoking the agreement"
+msgstr "Konsekvenser av återkallat medgivande"
+
+#. Default: Will be displayed when the revocation form is shown to inform of
+#. the consequences. If the conseqences are severe, please do express that
+#. here!
+#: arche_tos/schemas.py:121
+msgid "revoke_body_description"
+msgstr ""
+"Syns när formuläret för återkallande visas för att informera om "
+"konsekvenser. Om konsekvenserna är allvarliga, vänligen uttryck det här!"
+
+#: arche_tos/schemas.py:130
+msgid "Required from this date"
+msgstr "Krävs från och med detta datum"
+
+#: arche_tos/schemas.py:135
+msgid "Only for this language"
+msgstr "Bara för detta språk"
+
+#: arche_tos/schemas.py:136
+msgid "If set, only show this agreement for users using this lang."
+msgstr "Om vald, visa bara villkoret för användare som använder detta språk."
+
+#: arche_tos/schemas.py:143
+msgid "Require password check on revoke"
+msgstr "Kräv lösenord för återkallat medgivande"
+
+#: arche_tos/schemas.py:144 arche_tos/schemas.py:150
+msgid "This will only be enforced for enabled TOS"
+msgstr "Detta krävs bara för aktiva användarvillkor"
+
+#: arche_tos/schemas.py:149
+msgid "Require typing 'I understand' or similar on revoke"
+msgstr "Kräv att skriva ’Jag förstår’ eller liknande vid återkallat samtycke"
+
+#: arche_tos/views.py:25
+msgid "Terms of service"
+msgstr "Användarvillkor"
+
+#: arche_tos/views.py:26
+msgid "Agree"
+msgstr "Godkänn"
+
+#: arche_tos/views.py:41
+msgid "Thank you!"
+msgstr "Tack!"
+
+#: arche_tos/views.py:72
+msgid "Revoke agreement"
+msgstr "Återkalla medgivande"
+
+#: arche_tos/views.py:79
+msgid "Revoke"
+msgstr "Återkalla"
+
+#: arche_tos/views.py:93
+msgid "Agreement not found"
+msgstr "Villkoret hittas inte"
+
+#. Default: You've revoked your consent. Note that this website will not be
+#. usable without agreeing to these terms.
+#: arche_tos/views.py:106
+msgid "revoked_consent_enabled_tos"
+msgstr ""
+"Du har tagit tillbaka ditt medgivande. Notera att webbsidan inte kommer gå "
+"att använda utan att godkänna användaravtal."
+
+#: arche_tos/views.py:111
+msgid "You've revoked your consent."
+msgstr "Du har återkallat ditt medgivande."
+
+#: arche_tos/views.py:126
+msgid "You need to accept the terms to use this site."
+msgstr "Du behöver acceptera användarvillkoren för att använda sidan."
+
+#: arche_tos/views.py:171
+msgid "Site terms"
+msgstr "Användarvillkor"
+
+#: arche_tos/templates/tos_body.pt:10
+msgid "Expand full agreement..."
+msgstr "Expandera hela villkorstexten…"
+
+#: arche_tos/templates/agreed_tos.pt:10
+msgid "Agreed terms of service"
+msgstr "Godkända användarvillkor"
+
+#: arche_tos/templates/agreed_tos.pt:15
+msgid "You haven't agreed to any terms"
+msgstr "Dy har inte godkänt några användarvillkor"
+
+#: arche_tos/templates/agreed_tos.pt:25 arche_tos/templates/agreed_tos.pt:44
+msgid "You agreed to this on ${date}"
+msgstr "Du gav ditt medgivande till detta ${date}"
+
+#: arche_tos/templates/agreed_tos.pt:59
+msgid "Back to profile"
+msgstr "Tillbaka till profil"

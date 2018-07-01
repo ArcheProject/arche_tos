@@ -1,0 +1,173 @@
+#
+# SOME DESCRIPTIVE TITLE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE 1.0\n"
+"POT-Creation-Date: 2018-07-01 12:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Lingua 4.13\n"
+
+#: ./arche_tos/schemas.py:18
+msgid "I've read the full agreement and I agree to it"
+msgstr ""
+
+#: ./arche_tos/schemas.py:19
+msgid "You must agree to the terms to use this site."
+msgstr ""
+
+#: ./arche_tos/schemas.py:23
+msgid "I understand the consequences"
+msgstr ""
+
+#: ./arche_tos/schemas.py:34
+msgid "Wrong sentence"
+msgstr ""
+
+#: ./arche_tos/schemas.py:40
+#, python-format
+msgid "Type '${sentence}' to confirm that you want to do this."
+msgstr ""
+
+#: ./arche_tos/schemas.py:47
+msgid "Type confirmation"
+msgstr ""
+
+#: ./arche_tos/schemas.py:53
+msgid "I understand the consequences and want to revoke my agreement."
+msgstr ""
+
+#: ./arche_tos/schemas.py:54
+msgid "Read above and tick here if you want to do this."
+msgstr ""
+
+#: ./arche_tos/schemas.py:58
+msgid "Password check due to severe consequences of revoking this"
+msgstr ""
+
+#: ./arche_tos/schemas.py:93
+msgid "Any language"
+msgstr ""
+
+#: ./arche_tos/schemas.py:106
+msgid "Title"
+msgstr ""
+
+#: ./arche_tos/schemas.py:110
+msgid "Text to agree to"
+msgstr ""
+
+#: ./arche_tos/schemas.py:115
+msgid "Collapse agreement text?"
+msgstr ""
+
+#: ./arche_tos/schemas.py:116
+msgid "Causes a read full text link to be displayed instead."
+msgstr ""
+
+#: ./arche_tos/schemas.py:120
+#: ./arche_tos/templates/revoke_tos_consequence.pt:12
+msgid "Consequences of revoking the agreement"
+msgstr ""
+
+#. Default: Will be displayed when the revocation form is shown to inform of
+#. the consequences. If the conseqences are severe, please do express that
+#. here!
+#: ./arche_tos/schemas.py:121
+msgid "revoke_body_description"
+msgstr ""
+
+#: ./arche_tos/schemas.py:130
+msgid "Required from this date"
+msgstr ""
+
+#: ./arche_tos/schemas.py:135
+msgid "Only for this language"
+msgstr ""
+
+#: ./arche_tos/schemas.py:136
+msgid "If set, only show this agreement for users using this lang."
+msgstr ""
+
+#: ./arche_tos/schemas.py:143
+msgid "Require password check on revoke"
+msgstr ""
+
+#: ./arche_tos/schemas.py:144 ./arche_tos/schemas.py:150
+msgid "This will only be enforced for enabled TOS"
+msgstr ""
+
+#: ./arche_tos/schemas.py:149
+msgid "Require typing 'I understand' or similar on revoke"
+msgstr ""
+
+#: ./arche_tos/views.py:25
+msgid "Terms of service"
+msgstr ""
+
+#: ./arche_tos/views.py:26
+msgid "Agree"
+msgstr ""
+
+#: ./arche_tos/views.py:41
+msgid "Thank you!"
+msgstr ""
+
+#: ./arche_tos/views.py:72
+msgid "Revoke agreement"
+msgstr ""
+
+#: ./arche_tos/views.py:79
+msgid "Revoke"
+msgstr ""
+
+#: ./arche_tos/views.py:93
+msgid "Agreement not found"
+msgstr ""
+
+#. Default: You've revoked your consent. Note that this website will not be
+#. usable without agreeing to these terms.
+#: ./arche_tos/views.py:106
+msgid "revoked_consent_enabled_tos"
+msgstr ""
+
+#: ./arche_tos/views.py:111
+msgid "You've revoked your consent."
+msgstr ""
+
+#: ./arche_tos/views.py:126
+msgid "You need to accept the terms to use this site."
+msgstr ""
+
+#: ./arche_tos/views.py:171
+msgid "Site terms"
+msgstr ""
+
+#: ./arche_tos/templates/tos_body.pt:10
+msgid "Expand full agreement..."
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:10
+msgid "Agreed terms of service"
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:15
+msgid "You haven't agreed to any terms"
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:25
+#: ./arche_tos/templates/agreed_tos.pt:44
+msgid "You agreed to this on ${date}"
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:59
+msgid "Back to profile"
+msgstr ""
