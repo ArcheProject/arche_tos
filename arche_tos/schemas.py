@@ -61,17 +61,18 @@ class TOSRevokeSchema(colander.Schema):
     )
 
     def after_bind(self, schema, kw):
-        context = kw['context']
         request = kw['request']
+        view = kw['view']
+        tos = view.tos
         remove_fields = set()
         # If current user doesn't have a password, we can't really check against that
         if not request.profile.password:
             remove_fields.add('current_password')
         # Don't enforce fields on inactive TOS
-        if context.wf_state == 'enabled':
-            if not context.check_password_on_revoke:
+        if tos.wf_state == 'enabled':
+            if not tos.check_password_on_revoke:
                 remove_fields.add('current_password')
-            if not context.check_typed_on_revoke:
+            if not tos.check_typed_on_revoke:
                 remove_fields.add('typed_revoke')
         else:
             remove_fields.update(['current_password', 'typed_revoke'])
