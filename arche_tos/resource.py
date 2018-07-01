@@ -4,12 +4,13 @@ from arche.resources import Content
 from arche.resources import ContextACLMixin
 
 from arche_tos.interfaces import ITOS
+from arche_tos import _
 
 
 @implementer(ITOS)
 class TOS(Content, ContextACLMixin):
     type_name = "TOS"
-    type_title = "Terms of service"
+    type_title = _("Terms of service")
     add_permission = 'Add TOS'
     nav_visible = False
     listing_visible = True

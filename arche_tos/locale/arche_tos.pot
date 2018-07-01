@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2018-07-01 14:19+0200\n"
+"POT-Creation-Date: 2018-07-01 16:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingua 4.13\n"
+
+#: ./arche_tos/resource.py:13
+msgid "Terms of service"
+msgstr ""
 
 #: ./arche_tos/schemas.py:18
 msgid "I've read the full agreement and I agree to it"
