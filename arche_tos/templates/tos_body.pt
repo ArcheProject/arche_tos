@@ -1,0 +1,20 @@
+<tal:main
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:define="collapse tos.collapse_text"
+      i18n:domain="arche_tos">
+
+    <a tal:condition="collapse" data-toggle="collapse"
+       href="#${tos.uid}-collapse" aria-expanded="false"
+       aria-controls="${tos.uid}-collapse" i18n:translate="">
+      Expand full agreement...
+    </a>
+
+    <div class="collapse" id="${tos.uid}-collapse" tal:omit-tag="not collapse">
+      <div>
+        ${structure: tos.body}
+      </div>
+    </div>
+
+</tal:main>

@@ -11,14 +11,15 @@
         Agreed terms of service
     </h1>
 
-
     <tal:nothing condition="not (active_tos or inactive_tos)">
         <p i18n:translate="">You haven't agreed to any terms</p>
     </tal:nothing>
 
     <tal:iter repeat="(tos, date) active_tos">
-      <h3>${tos.title}</h3>
-      <div>${structure: tos.body}</div>
+        <h3>${tos.title}</h3>
+
+        <div tal:replace="structure view.render_template('arche_tos:templates/tos_body.pt', tos=tos)"/>
+
       <hr/>
       <p>
         <tal:ts i18n:translate="">You agreed to this on

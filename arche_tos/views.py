@@ -34,7 +34,7 @@ class TOSForm(BaseForm):
         return self.request.is_xhr
 
     def before_fields(self):
-        values = {'tos_items': self.tos_manager.find_tos()}
+        values = {'tos_items': self.tos_manager.find_tos(), 'view': self}
         return render('arche_tos:templates/tos_listing.pt', values, request=self.request)
 
     def agree_success(self, appstruct):
@@ -95,7 +95,7 @@ class RevokeAgreementForm(BaseForm):
 
     def before_fields(self):
         # List the consequences of revoking this agreement
-        values = {'tos': self.tos}
+        values = {'tos': self.tos, 'view': self}
         return render('arche_tos:templates/revoke_tos_consequence.pt', values, request=self.request)
 
     def revoke_success(self, appstruct):

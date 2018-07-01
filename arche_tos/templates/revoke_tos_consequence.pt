@@ -4,7 +4,9 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="arche_tos">
   <h3>${tos.title}</h3>
-  <div>${structure: tos.body}</div>
+
+  <div tal:replace="structure view.render_template('arche_tos:templates/tos_body.pt', tos=tos)"/>
+
   <hr/>
   <tal:consequence condition="tos.revoke_body">
     <h3 i18n:translate="">Consequences of revoking the agreement</h3>
