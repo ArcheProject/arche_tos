@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from arche import _
-
 import colander
 import deform
 from arche.schemas import maybe_modal_form, default_now
 from arche.validators import deferred_current_password_validator
+
+from arche_tos import _
 
 
 def _return(value):
