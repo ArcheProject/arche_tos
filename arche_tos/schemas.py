@@ -100,6 +100,13 @@ def default_language(node, kw):
     return request.localizer.locale_name
 
 
+@colander.deferred
+def enable_typed_revoke_description(node, kw):
+    request = kw['request']
+    return _("Require typing '${sentence}' on revoke.",
+             mapping = {'sentence': request.localizer.translate(TYPED_REVOKE_SENTENCE)})
+
+
 class TOSSchema(colander.Schema):
     title = colander.SchemaNode(
         colander.String(),
@@ -146,7 +153,7 @@ class TOSSchema(colander.Schema):
     )
     check_typed_on_revoke = colander.SchemaNode(
         colander.Bool(),
-        title = _("Require typing 'I understand' or similar on revoke"),
+        title = enable_typed_revoke_description,
         description=_("This will only be enforced for enabled TOS"),
         default=False,
     )

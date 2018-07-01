@@ -22,7 +22,7 @@ from arche_tos import _
 class TOSForm(BaseForm):
     type_name = 'TOS'
     schema_name = 'agree'
-    title = _("Terms of service")
+    title = _("New terms require your attention")
     buttons = (deform.Button('agree', title=_("Agree")),)
 
     @reify

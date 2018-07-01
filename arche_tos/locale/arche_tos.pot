@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2018-07-01 12:00+0200\n"
+"POT-Creation-Date: 2018-07-01 14:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,22 +58,27 @@ msgid "Any language"
 msgstr ""
 
 #: ./arche_tos/schemas.py:106
+#, python-format
+msgid "Require typing '${sentence}' on revoke."
+msgstr ""
+
+#: ./arche_tos/schemas.py:113
 msgid "Title"
 msgstr ""
 
-#: ./arche_tos/schemas.py:110
+#: ./arche_tos/schemas.py:117
 msgid "Text to agree to"
 msgstr ""
 
-#: ./arche_tos/schemas.py:115
+#: ./arche_tos/schemas.py:122
 msgid "Collapse agreement text?"
 msgstr ""
 
-#: ./arche_tos/schemas.py:116
+#: ./arche_tos/schemas.py:123
 msgid "Causes a read full text link to be displayed instead."
 msgstr ""
 
-#: ./arche_tos/schemas.py:120
+#: ./arche_tos/schemas.py:127
 #: ./arche_tos/templates/revoke_tos_consequence.pt:12
 msgid "Consequences of revoking the agreement"
 msgstr ""
@@ -81,36 +86,32 @@ msgstr ""
 #. Default: Will be displayed when the revocation form is shown to inform of
 #. the consequences. If the conseqences are severe, please do express that
 #. here!
-#: ./arche_tos/schemas.py:121
+#: ./arche_tos/schemas.py:128
 msgid "revoke_body_description"
 msgstr ""
 
-#: ./arche_tos/schemas.py:130
+#: ./arche_tos/schemas.py:137
 msgid "Required from this date"
 msgstr ""
 
-#: ./arche_tos/schemas.py:135
+#: ./arche_tos/schemas.py:142
 msgid "Only for this language"
 msgstr ""
 
-#: ./arche_tos/schemas.py:136
+#: ./arche_tos/schemas.py:143
 msgid "If set, only show this agreement for users using this lang."
 msgstr ""
 
-#: ./arche_tos/schemas.py:143
+#: ./arche_tos/schemas.py:150
 msgid "Require password check on revoke"
 msgstr ""
 
-#: ./arche_tos/schemas.py:144 ./arche_tos/schemas.py:150
+#: ./arche_tos/schemas.py:151 ./arche_tos/schemas.py:157
 msgid "This will only be enforced for enabled TOS"
 msgstr ""
 
-#: ./arche_tos/schemas.py:149
-msgid "Require typing 'I understand' or similar on revoke"
-msgstr ""
-
 #: ./arche_tos/views.py:25
-msgid "Terms of service"
+msgid "New terms require your attention"
 msgstr ""
 
 #: ./arche_tos/views.py:26

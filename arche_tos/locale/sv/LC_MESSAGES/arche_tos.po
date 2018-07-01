@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-01 12:00+0200\n"
+"POT-Creation-Date: 2018-07-01 14:19+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,61 +54,62 @@ msgid "Any language"
 msgstr "Alla språk"
 
 #: arche_tos/schemas.py:106
+#, python-format
+msgid "Require typing '${sentence}' on revoke."
+msgstr "Kräv att skriva ’Jag förstår’ vid återkallat samtycke"
+
+#: arche_tos/schemas.py:113
 msgid "Title"
 msgstr "Titel"
 
-#: arche_tos/schemas.py:110
+#: arche_tos/schemas.py:117
 msgid "Text to agree to"
 msgstr "Text att ge sitt medgivande till"
 
-#: arche_tos/schemas.py:115
+#: arche_tos/schemas.py:122
 msgid "Collapse agreement text?"
 msgstr "Kollapsa villkorstext?"
 
-#: arche_tos/schemas.py:116
+#: arche_tos/schemas.py:123
 msgid "Causes a read full text link to be displayed instead."
 msgstr "Skapar länk för att läsa hela avtalet istället för att visa det."
 
-#: arche_tos/schemas.py:120 arche_tos/templates/revoke_tos_consequence.pt:12
+#: arche_tos/schemas.py:127 arche_tos/templates/revoke_tos_consequence.pt:12
 msgid "Consequences of revoking the agreement"
 msgstr "Konsekvenser av återkallat medgivande"
 
 #. Default: Will be displayed when the revocation form is shown to inform of
 #. the consequences. If the conseqences are severe, please do express that
 #. here!
-#: arche_tos/schemas.py:121
+#: arche_tos/schemas.py:128
 msgid "revoke_body_description"
 msgstr ""
 "Syns när formuläret för återkallande visas för att informera om "
 "konsekvenser. Om konsekvenserna är allvarliga, vänligen uttryck det här!"
 
-#: arche_tos/schemas.py:130
+#: arche_tos/schemas.py:137
 msgid "Required from this date"
 msgstr "Krävs från och med detta datum"
 
-#: arche_tos/schemas.py:135
+#: arche_tos/schemas.py:142
 msgid "Only for this language"
 msgstr "Bara för detta språk"
 
-#: arche_tos/schemas.py:136
+#: arche_tos/schemas.py:143
 msgid "If set, only show this agreement for users using this lang."
 msgstr "Om vald, visa bara villkoret för användare som använder detta språk."
 
-#: arche_tos/schemas.py:143
+#: arche_tos/schemas.py:150
 msgid "Require password check on revoke"
 msgstr "Kräv lösenord för återkallat medgivande"
 
-#: arche_tos/schemas.py:144 arche_tos/schemas.py:150
+#: arche_tos/schemas.py:151 arche_tos/schemas.py:157
 msgid "This will only be enforced for enabled TOS"
 msgstr "Detta krävs bara för aktiva användarvillkor"
 
-#: arche_tos/schemas.py:149
-msgid "Require typing 'I understand' or similar on revoke"
-msgstr "Kräv att skriva ’Jag förstår’ eller liknande vid återkallat samtycke"
-
 #: arche_tos/views.py:25
-msgid "Terms of service"
-msgstr "Användarvillkor"
+msgid "New terms require your attention"
+msgstr "Nya villkor kräver åtgärd"
 
 #: arche_tos/views.py:26
 msgid "Agree"
@@ -169,3 +170,6 @@ msgstr "Du gav ditt medgivande till detta ${date}"
 #: arche_tos/templates/agreed_tos.pt:59
 msgid "Back to profile"
 msgstr "Tillbaka till profil"
+
+#~ msgid "Terms of service"
+#~ msgstr "Användarvillkor"
