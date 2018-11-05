@@ -54,6 +54,8 @@ class TOSManager(object):
         try:
             return self.request.session['tos_check_again_at'] < utcnow()
         except KeyError:
+            pass
+        if self.agreed_tos is not None:
             return True
 
     def mark_checked(self):
@@ -102,7 +104,8 @@ class TOSManager(object):
 
     @reify
     def agreed_tos(self):
-        return IAgreedTOS(self.request.profile)
+        if self.request.profile:
+            return IAgreedTOS(self.request.profile)
 
 
 @adapter(IUser)
