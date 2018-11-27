@@ -129,7 +129,7 @@ def check_terms(view, event):
     if not request.authenticated_userid:
         return
     # Don't mix accept terms popups with other TOS functionality
-    if request.view_name in ('tos_form', 'revoke_agreement', 'agreed_tos'):
+    if getattr(request, 'view_name', '') in ('tos_form', 'revoke_agreement', 'agreed_tos'):
         return
     terms_manager = ITOSManager(request)
     try:
