@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-01 16:49+0200\n"
+"POT-Creation-Date: 2019-12-16 10:35+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Robin Harms Oredsson <robin@betahaus.net>\n"
 "Language-Team: \n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: arche_tos/resource.py:13
+#: arche_tos/resource.py:13 arche_tos/views.py:171
 msgid "Terms of service"
 msgstr "Användarvillkor"
 
@@ -78,7 +78,7 @@ msgstr "Kollapsa villkorstext?"
 msgid "Causes a read full text link to be displayed instead."
 msgstr "Skapar länk för att läsa hela avtalet istället för att visa det."
 
-#: arche_tos/schemas.py:127 arche_tos/templates/revoke_tos_consequence.pt:12
+#: arche_tos/schemas.py:127
 msgid "Consequences of revoking the agreement"
 msgstr "Konsekvenser av återkallat medgivande"
 
@@ -151,26 +151,20 @@ msgstr "Du har återkallat ditt medgivande."
 msgid "You need to accept the terms to use this site."
 msgstr "Du behöver acceptera användarvillkoren för att använda sidan."
 
-#: arche_tos/views.py:171
-msgid "Site terms"
-msgstr "Användarvillkor"
+#~ msgid "Site terms"
+#~ msgstr "Användarvillkor"
 
-#: arche_tos/templates/tos_body.pt:10
-msgid "Expand full agreement..."
-msgstr "Expandera hela villkorstexten…"
+#~ msgid "Expand full agreement..."
+#~ msgstr "Expandera hela villkorstexten…"
 
-#: arche_tos/templates/agreed_tos.pt:10
-msgid "Agreed terms of service"
-msgstr "Godkända användarvillkor"
+#~ msgid "Agreed terms of service"
+#~ msgstr "Godkända användarvillkor"
 
-#: arche_tos/templates/agreed_tos.pt:15
-msgid "You haven't agreed to any terms"
-msgstr "Dy har inte godkänt några användarvillkor"
+#~ msgid "You haven't agreed to any terms"
+#~ msgstr "Dy har inte godkänt några användarvillkor"
 
-#: arche_tos/templates/agreed_tos.pt:25 arche_tos/templates/agreed_tos.pt:44
-msgid "You agreed to this on ${date}"
-msgstr "Du gav ditt medgivande till detta ${date}"
+#~ msgid "You agreed to this on ${date}"
+#~ msgstr "Du gav ditt medgivande till detta ${date}"
 
-#: arche_tos/templates/agreed_tos.pt:59
-msgid "Back to profile"
-msgstr "Tillbaka till profil"
+#~ msgid "Back to profile"
+#~ msgstr "Tillbaka till profil"

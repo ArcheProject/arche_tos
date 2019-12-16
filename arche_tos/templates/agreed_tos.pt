@@ -45,7 +45,7 @@
                   <tal:ts i18n:name="date">${date}</tal:ts></tal:ts>
                 <a data-open-modal
                    href="${request.resource_url(tos, 'revoke_agreement')}"
-                   class="text-danger">Revoke agreement...</a>
+                   class="text-danger" i18n:translate="">Revoke agreement...</a>
               </p>
               <hr/>
             </tal:iter>

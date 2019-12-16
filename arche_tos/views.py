@@ -168,5 +168,5 @@ def includeme(config):
     )
     config.add_view_action(
         agreed_tos_menu_item, 'user_menu', 'agreed_tos',
-        title=_("Site terms"), priority=40
+        title=_("Terms of service"), priority=40
     )
