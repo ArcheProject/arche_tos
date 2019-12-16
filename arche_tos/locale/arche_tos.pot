@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2019-12-16 10:35+0100\n"
+"POT-Creation-Date: 2019-12-16 11:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,6 +83,7 @@ msgid "Causes a read full text link to be displayed instead."
 msgstr ""
 
 #: ./arche_tos/schemas.py:127
+#: ./arche_tos/templates/revoke_tos_consequence.pt:12
 msgid "Consequences of revoking the agreement"
 msgstr ""
 
@@ -149,4 +150,29 @@ msgstr ""
 
 #: ./arche_tos/views.py:126
 msgid "You need to accept the terms to use this site."
+msgstr ""
+
+#: ./arche_tos/templates/tos_body.pt:10
+msgid "Expand full agreement..."
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:10
+msgid "Agreed terms of service"
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:15
+msgid "You haven't agreed to any terms"
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:25
+#: ./arche_tos/templates/agreed_tos.pt:44
+msgid "You agreed to this on ${date}"
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:48
+msgid "Revoke agreement..."
+msgstr ""
+
+#: ./arche_tos/templates/agreed_tos.pt:59
+msgid "Back to profile"
 msgstr ""

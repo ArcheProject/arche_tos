@@ -7,7 +7,7 @@
 
 # configuration
 DOMAIN="arche_tos"
-SEARCH_PATH="arche_tos/"
+SEARCH_PATH="arche_tos"
 LOCALES_PATH="$SEARCH_PATH/locale"
 # end configuration
 

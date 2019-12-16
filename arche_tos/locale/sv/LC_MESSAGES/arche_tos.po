@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-16 10:35+0100\n"
+"POT-Creation-Date: 2019-12-16 11:12+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Robin Harms Oredsson <robin@betahaus.net>\n"
 "Language-Team: \n"
@@ -60,7 +60,7 @@ msgstr "Alla språk"
 #: arche_tos/schemas.py:106
 #, python-format
 msgid "Require typing '${sentence}' on revoke."
-msgstr "Kräv att skriva ’Jag förstår’ vid återkallat samtycke"
+msgstr "Kräv att skriva ’${sentence}’ vid återkallat samtycke."
 
 #: arche_tos/schemas.py:113
 msgid "Title"
@@ -78,7 +78,7 @@ msgstr "Kollapsa villkorstext?"
 msgid "Causes a read full text link to be displayed instead."
 msgstr "Skapar länk för att läsa hela avtalet istället för att visa det."
 
-#: arche_tos/schemas.py:127
+#: arche_tos/schemas.py:127 arche_tos/templates/revoke_tos_consequence.pt:12
 msgid "Consequences of revoking the agreement"
 msgstr "Konsekvenser av återkallat medgivande"
 
@@ -151,20 +151,29 @@ msgstr "Du har återkallat ditt medgivande."
 msgid "You need to accept the terms to use this site."
 msgstr "Du behöver acceptera användarvillkoren för att använda sidan."
 
+#: arche_tos/templates/tos_body.pt:10
+msgid "Expand full agreement..."
+msgstr "Expandera hela villkorstexten…"
+
+#: arche_tos/templates/agreed_tos.pt:10
+msgid "Agreed terms of service"
+msgstr "Godkända användarvillkor"
+
+#: arche_tos/templates/agreed_tos.pt:15
+msgid "You haven't agreed to any terms"
+msgstr "Du har inte godkänt några användarvillkor"
+
+#: arche_tos/templates/agreed_tos.pt:25 arche_tos/templates/agreed_tos.pt:44
+msgid "You agreed to this on ${date}"
+msgstr "Du gav ditt medgivande till detta ${date}"
+
+#: arche_tos/templates/agreed_tos.pt:48
+msgid "Revoke agreement..."
+msgstr "Återkalla medgivande…"
+
+#: arche_tos/templates/agreed_tos.pt:59
+msgid "Back to profile"
+msgstr "Tillbaka till profil"
+
 #~ msgid "Site terms"
 #~ msgstr "Användarvillkor"
-
-#~ msgid "Expand full agreement..."
-#~ msgstr "Expandera hela villkorstexten…"
-
-#~ msgid "Agreed terms of service"
-#~ msgstr "Godkända användarvillkor"
-
-#~ msgid "You haven't agreed to any terms"
-#~ msgstr "Dy har inte godkänt några användarvillkor"
-
-#~ msgid "You agreed to this on ${date}"
-#~ msgstr "Du gav ditt medgivande till detta ${date}"
-
-#~ msgid "Back to profile"
-#~ msgstr "Tillbaka till profil"
