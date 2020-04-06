@@ -48,8 +48,6 @@
         <hr/>
     </tal:iter>
 
-  ${structure: view.render_template('arche_tos:templates/tos_controllers.pt')}
-
 </div>
 </body>
 </html>

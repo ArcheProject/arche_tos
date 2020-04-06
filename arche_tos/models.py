@@ -196,11 +196,6 @@ class TOSManager(object):
                 )
 
 
-    def get_data_controller(self, default=""):
-        settings = ITOSSettings(self.request.root)
-        return settings.get("data_controller", default)
-
-
 @adapter(IUser)
 @implementer(IAgreedTOS)
 class AgreedTOS(AttributeAnnotations):

@@ -53,8 +53,6 @@
         </div>
     </tal:inactive>
 
-    ${structure: view.render_template('arche_tos:templates/tos_controllers.pt')}
-
     <div class="well">
         <a href="${request.resource_url(context)}"
            class="btn btn-default"

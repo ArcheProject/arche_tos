@@ -201,11 +201,6 @@ class OnlyAdministratorsWithEmailValidator(object):
 
 
 class TOSSettingsSchema(colander.Schema):
-    data_controller = colander.SchemaNode(
-        colander.String(),
-        title=_("Data controller"),
-        # description=_("")
-    )
     data_consent_managers = colander.SchemaNode(
         colander.Set(),
         title=_("Data Consent Manager(s)"),
