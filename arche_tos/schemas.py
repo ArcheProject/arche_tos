@@ -204,7 +204,7 @@ class TOSSettingsSchema(colander.Schema):
     data_controller = colander.SchemaNode(
         colander.String(),
         title=_("Data controller"),
-        #description=_("")
+        # description=_("")
     )
     data_consent_managers = colander.SchemaNode(
         colander.Set(),
@@ -212,6 +212,14 @@ class TOSSettingsSchema(colander.Schema):
         descruption=_("Users handling consent issues - must have administrator rights"),
         widget=UserReferenceWidget(),
         validator=OnlyAdministratorsWithEmailValidator,
+    )
+    email_consent_managers = colander.SchemaNode(
+        colander.Bool(),
+        title=_("Notify via email?"),
+        description=_(
+            "email_consent_managers_desc",
+            default="Email consent managers when a user revokes an important agreement.",
+        ),
     )
 
 

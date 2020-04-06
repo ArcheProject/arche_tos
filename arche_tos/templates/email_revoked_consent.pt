@@ -1,0 +1,27 @@
+<tal:main xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="arche_tos">
+
+  <h1 i18n:translate="">Hello ${user.title},</h1>
+
+  <p i18n:translate="why_data_consent_email_notice">
+    You get this notice since you're Data Consent Manager for ${site_title}.
+  </p>
+  <p i18n:translate="user_has_revoked">
+    <tal:ts i18n:name="username">${revoked_user.title} (revoked_user.userid)</tal:ts>
+    has revoked their agreement to the following terms of serice:
+  </p>
+  <ul>
+    <li tal:repeat="tos revoked_tos">${tos.title}</li>
+  </ul>
+
+  <p i18n:translate="admin_email_actions">
+    You may need to purge data from your instance.
+    Please see <a i18n:name="tos_link" href="${tos_link}">${tos_link}</a> for overview of terms,
+    users who've revoked important terms and general settings.
+    You need to login first if you aren't already. Click settings if you wish to change email notification settings.
+  </p>
+
+</tal:main>

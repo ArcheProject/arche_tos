@@ -11,6 +11,7 @@ from arche.utils import AttributeAnnotations
 from arche.utils import utcnow
 from pyramid.decorator import reify
 from pyramid.interfaces import IRequest
+from pyramid.renderers import render
 from repoze.catalog.query import Eq
 from zope.component import adapter
 from zope.interface import implementer
@@ -20,9 +21,11 @@ from arche_tos.exceptions import TermsNeedAcceptance
 from arche_tos.exceptions import TermsNotAccepted
 from arche_tos.fanstatic_lib import terms_modal
 from arche_tos.interfaces import IAgreedTOS
+from arche_tos.interfaces import IImportantAgreementsRevoked
 from arche_tos.interfaces import IRevokedTOS
 from arche_tos.interfaces import ITOSManager
 from arche_tos.interfaces import ITOSSettings
+from arche_tos import _
 
 logger = getLogger(__name__)
 
@@ -179,11 +182,19 @@ class TOSManager(object):
         users = self.request.root["users"]
         for userid in settings.get("data_consent_managers", ()):
             try:
-                yield users[userid]
+                user = users[userid]
             except KeyError:
                 logger.warning(
                     "Set data consent manager userid '%s' doesn't exist.", userid
                 )
+                continue
+            if user.email:
+                yield user
+            else:
+                logger.warning(
+                    "Set data consent manager userid '%s' doesn't have a valid email address.", userid
+                )
+
 
     def get_data_controller(self, default=""):
         settings = ITOSSettings(self.request.root)
@@ -250,6 +261,27 @@ def check_terms(view, event):
         return
 
 
+def email_data_consent_managers(event):
+    request = event.request
+    root = request.root
+    settings = ITOSSettings(root)
+    if settings.get("email_consent_managers", None):
+        tos_manager = ITOSManager(request)
+        for user in tos_manager.get_consent_managers():
+            values = {
+                "revoked_user": event.user,
+                "revoked_tos": event.revoked_tos,
+                "user": user,
+                "site_title": root.title,
+                "tos_link": request.resource_url(root, "_manage_tos"),
+            }
+            html = render("arche_tos:templates/email_revoked_consent.pt", values, request)
+            subject = _("revoked_consent_subject",
+                        default="Revoked consent notice from ${title}",
+                        mapping={"title": root.title})
+            request.send_email(subject, [user.email], html)
+
+
 def includeme(config):
     """
     Include components
@@ -272,3 +304,4 @@ def includeme(config):
     config.registry.registerAdapter(RevokedTOS)
     config.registry.registerAdapter(TOSSettings)
     config.add_subscriber(check_terms, [IBaseView, IViewInitializedEvent])
+    config.add_subscriber(email_data_consent_managers, IImportantAgreementsRevoked)
