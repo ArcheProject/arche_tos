@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="view.macro('arche:templates/master.pt', 'arche:templates/inline.pt')"
+      i18n:domain="arche_tos">
+<body>
+<div metal:fill-slot="content">
+
+    <h1 i18n:translate="">
+        Terms of service
+    </h1>
+
+    ${structure: view.render_template('arche_tos:templates/manage_tos_tabs.pt')}
+
+    <h4 i18n:translate="">Terminology help, relevant to GDPR.</h4>
+
+    <dl>
+        <dt i18n:translate="">Data Controller</dt>
+        <dd i18n:translate="data_controller_help">The organisation owning this instance.</dd>
+
+        <dt i18n:translate="">Data Processor</dt>
+        <dd i18n:translate="data_processor_help">Anyone with access to this data that for instance helps you run this site..</dd>
+
+        <dt i18n:translate="">Data Consent Manager</dt>
+        <dd i18n:translate="data_consent_manager_help">The person(s) in your organisation responsibe for handling data issues,
+            for instance complying with a users request to have their data scrubbed.</dd>
+
+        <dt i18n:translate="">Data Subject</dt>
+        <dd i18n:translate="data_subject_help">A member here, basically any registered user.</dd>
+    </dl>
+
+    <hr/>
+
+    <h3 i18n:translate="">Active</h3>
+
+    <tal:nothing condition="not view.active_tos">
+        <p i18n:translate="">Nothing active</p>
+    </tal:nothing>
+
+    <tal:iter repeat="tos view.active_tos">
+
+        <h4>
+            <a href="${request.resource_url(tos)}">${tos.title}</a>
+        </h4>
+
+        <p>${tos.date}</p>
+        <hr/>
+    </tal:iter>
+
+  ${structure: view.render_template('arche_tos:templates/tos_controllers.pt')}
+
+</div>
+</body>
+</html>

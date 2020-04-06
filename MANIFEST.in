@@ -1,2 +1,2 @@
 include *.txt *.ini *.cfg *.rst
-recursive-include arche_tos *.pt *.txt *.js
+recursive-include arche_tos *.pt *.txt *.js *.mo

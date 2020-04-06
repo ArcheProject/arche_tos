@@ -25,7 +25,7 @@
         <tal:ts i18n:translate="">You agreed to this on
           <tal:ts i18n:name="date">${date}</tal:ts></tal:ts>
         <a href="${request.resource_url(context, 'revoke_agreement', query={'tos': tos.uid})}"
-           class="text-danger">Revoke agreement...</a>
+           class="text-danger" i18n:translate="">Revoke agreement...</a>
       </p>
       <hr/>
     </tal:iter>
@@ -52,6 +52,8 @@
 
         </div>
     </tal:inactive>
+
+    ${structure: view.render_template('arche_tos:templates/tos_controllers.pt')}
 
     <div class="well">
         <a href="${request.resource_url(context)}"

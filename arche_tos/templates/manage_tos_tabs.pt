@@ -1,0 +1,25 @@
+<tal:main xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="voteit.core">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="${request.view_name == '_manage_tos' and 'active' or None}">
+      <a href="${request.resource_url(context, '_manage_tos')}" i18n:translate="">
+        Overview
+      </a>
+    </li>
+    <li role="presentation" class="${request.view_name == '_list_revoked_tos_users' and 'active' or None}">
+      <a href="${request.resource_url(context, '_list_revoked_tos_users')}" i18n:translate="">
+        List users who revoked
+      </a>
+    </li>
+    <li role="presentation" class="${request.view_name == '_tos_settings' and 'active' or None}">
+      <a href="${request.resource_url(context, '_tos_settings')}">
+        <span tal:condition="view.missing_settings"
+              class="glyphicon glyphicon-warning-sign"></span>
+        <tal:ts i18n:translate="">Settings</tal:ts>
+      </a>
+    </li>
+  </ul>
+</tal:main>

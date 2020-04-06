@@ -17,3 +17,15 @@ class ITOSManager(Interface):
 
 class IAgreedTOS(IDict):
     pass
+
+
+class IRevokedTOS(IDict):
+    pass
+
+
+class ITOSSettings(IDict):
+    pass
+
+
+class IImportantAgreementsRevoked(Interface):
+    pass
