@@ -11,13 +11,6 @@
     <dd tal:condition="not data_controller">
         <i i18n:translate="">No data controller set for this site</i>
     </dd>
-    <dt i18n:translate="">Data Consent Manager(s)</dt>
-    <dd>
-        <div tal:repeat="user consent_managers">${user.title} (${user.userid})</div>
-    </dd>
-    <dd tal:condition="not consent_managers">
-        <i i18n:translate="">No data consent managers</i>
-    </dd>
 </dl>
 
 </tal:main>
