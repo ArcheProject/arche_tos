@@ -16,7 +16,7 @@
 
     <hr/>
 
-    <h3>Active TOS</h3>
+    <h3 i18n:translate="">Active TOS</h3>
 
     <tal:nothing condition="not view.active_tos">
         <p i18n:translate="">Nothing active</p>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-08 21:15+0200\n"
+"POT-Creation-Date: 2020-04-08 21:31+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Robin Harms Oredsson <robin@betahaus.net>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 #. Default: Revoked consent notice from ${title}
 #: arche_tos/models.py:274
 msgid "revoked_consent_subject"
-msgstr "Notis om tillbakadraget medgivande från ${title}"
+msgstr "Notis om återkallat samtycke från ${title}"
 
 #: arche_tos/models.py:324
 msgid "This would delete enabled Terms of service"
@@ -59,7 +59,7 @@ msgstr "Skriv bekräftelse"
 #: arche_tos/schemas.py:61
 msgid "I understand the consequences and want to revoke my agreement."
 msgstr ""
-"Jag förstår konsekvenserna och vill återkalla mitt medgivande till villkoren."
+"Jag förstår konsekvenserna och vill återkalla mitt samtycke till villkoren."
 
 #: arche_tos/schemas.py:63
 msgid "Read above and tick here if you want to do this."
@@ -67,7 +67,7 @@ msgstr "Läs ovan och klicka i här om du vill göra det här."
 
 #: arche_tos/schemas.py:68
 msgid "Password check due to severe consequences of revoking this"
-msgstr "Kolla lösenord pga grava konsekvenser av tillbakadraget medgivande"
+msgstr "Kolla lösenord pga grava konsekvenser av återkallat samtycke"
 
 #: arche_tos/schemas.py:103
 msgid "Any language"
@@ -84,7 +84,7 @@ msgstr "Titel"
 
 #: arche_tos/schemas.py:126
 msgid "Text to agree to"
-msgstr "Text att ge sitt medgivande till"
+msgstr "Text att ge sitt samtycke till"
 
 #: arche_tos/schemas.py:131
 msgid "Collapse agreement text?"
@@ -96,7 +96,7 @@ msgstr "Skapar länk för att läsa hela avtalet istället för att visa det."
 
 #: arche_tos/schemas.py:136 arche_tos/templates/revoke_tos_consequence.pt:12
 msgid "Consequences of revoking the agreement"
-msgstr "Konsekvenser av återkallat medgivande"
+msgstr "Konsekvenser av återkallat samtycke"
 
 #. Default: Will be displayed when the revocation form is shown to inform of
 #. the consequences. If the conseqences are severe, please do express that
@@ -117,7 +117,7 @@ msgstr "Om vald, visa bara villkoret för användare som använder detta språk.
 
 #: arche_tos/schemas.py:156
 msgid "Require password check on revoke"
-msgstr "Kräv lösenord för återkallat medgivande"
+msgstr "Kräv lösenord för återkallat samtycke"
 
 #: arche_tos/schemas.py:157 arche_tos/schemas.py:163
 msgid "This will only be enforced for enabled TOS"
@@ -153,8 +153,8 @@ msgstr "Notifiera med epost?"
 #: arche_tos/schemas.py:211
 msgid "email_consent_managers_desc"
 msgstr ""
-"Eposta personuppgiftsadministratör(er) när en användare drar tillbaka sitt "
-"medgivande från ett viktigt villkor."
+"Eposta personuppgiftsadministratör(er) när en användare återkallar sitt "
+"samtycke från ett viktigt villkor."
 
 #: arche_tos/schemas.py:218
 msgid "Folder to place TOS in"
@@ -180,7 +180,7 @@ msgstr "Tack!"
 
 #: arche_tos/views.py:109
 msgid "Revoke agreement"
-msgstr "Återkalla medgivande"
+msgstr "Återkalla samtycke"
 
 #: arche_tos/views.py:116
 msgid "Revoke"
@@ -195,14 +195,13 @@ msgstr "Villkoret hittas inte"
 #: arche_tos/views.py:141
 msgid "revoked_consent_enabled_tos"
 msgstr ""
-"Du har tagit tillbaka ditt medgivande. Notera att webbsidan inte kommer gå "
-"att använda utan att godkänna användaravtal."
+"Du har återkallat ditt samtycke. Notera att webbsidan inte kommer gå att "
+"använda utan att godkänna användaravtal."
 
 #. Default: You've revoked your consent to terms that were marked as inactive.
 #: arche_tos/views.py:148
 msgid "revoked_consent_inactive_tos"
-msgstr ""
-"Du har dragit tillbaka ditt medgivande till villkor som inte längre gällde."
+msgstr "Du har återkallat ditt samtycke till villkor som inte längre gäller."
 
 #: arche_tos/views.py:209
 msgid "No changes made"
@@ -218,7 +217,11 @@ msgstr "Hantera villkor"
 
 #: arche_tos/templates/list_revoked_users.pt:11
 msgid "Users who've revoked agreements"
-msgstr "Användare som återkallat sitt medgivande"
+msgstr "Användare som återkallat sitt samtycke"
+
+#: arche_tos/templates/list_revoked_users.pt:19
+msgid "Active TOS"
+msgstr "Aktiva villkor"
 
 #: arche_tos/templates/list_revoked_users.pt:22
 msgid "Nothing active"
@@ -254,11 +257,11 @@ msgstr "Du har inte godkänt några användarvillkor"
 
 #: arche_tos/templates/agreed_tos.pt:25 arche_tos/templates/agreed_tos.pt:44
 msgid "You agreed to this on ${date}"
-msgstr "Du gav ditt medgivande till detta ${date}"
+msgstr "Du gav ditt samtycke till detta ${date}"
 
 #: arche_tos/templates/agreed_tos.pt:28 arche_tos/templates/agreed_tos.pt:48
 msgid "Revoke agreement..."
-msgstr "Återkalla medgivande…"
+msgstr "Återkalla samtycke…"
 
 #: arche_tos/templates/agreed_tos.pt:59
 msgid "Back to profile"
@@ -280,7 +283,7 @@ msgstr ""
 #. service:
 #: arche_tos/templates/email_revoked_consent.pt:12
 msgid "user_has_revoked"
-msgstr "${username} har dragit tillbaka sitt medgivande till följande villkor:"
+msgstr "${username} har återkallat sitt samtycke till följande villkor:"
 
 #. Default: You may need to purge data from your instance. Please see
 #. ${tos_link} for overview of terms, users who've revoked important terms and
@@ -290,9 +293,9 @@ msgstr "${username} har dragit tillbaka sitt medgivande till följande villkor:"
 msgid "admin_email_actions"
 msgstr ""
 "Du kan behöva rensa data från er sida. Se ${tos_link} för en översikt ar "
-"villkor, användare som dragit tillbaka sitt medgivande till viktiga villkor "
-"och generella inställningar. Du kan behöva logga in först. Klicka "
-"inställningar om du vill ändra inställningarna för epostnotifiering."
+"villkor, användare som återkallat sitt samtycke till viktiga villkor och "
+"generella inställningar. Du kan behöva logga in först. Klicka inställningar "
+"om du vill ändra inställningarna för epostnotifiering."
 
 #: arche_tos/templates/manage_tos.pt:21
 msgid "Nothing created yet"
@@ -312,7 +315,7 @@ msgstr "Lägg till"
 
 #: arche_tos/templates/manage_tos_tabs.pt:20
 msgid "List users who revoked"
-msgstr "Användare med tillbakadragna medgivanden"
+msgstr "Användare med återkallade samtycken"
 
 #: arche_tos/templates/manage_tos_tabs.pt:28
 msgid "Settings"
@@ -365,8 +368,8 @@ msgstr ""
 #: arche_tos/templates/manage_tos_tabs.pt:65
 msgid "step_create_tos"
 msgstr ""
-"Lägg till villkor i foldern. Du kan välja hur processen för att dra tillbaka "
-"sitt medgivande ska gå till per villkor."
+"Lägg till villkor i foldern. Du kan välja hur processen för att återkalla "
+"sitt samtycke ska gå till per villkor."
 
 #. Default: Activate your newly created TOS in the workflow menu visible where
 #. you saved it.

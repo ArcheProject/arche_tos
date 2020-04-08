@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE 1.0\n"
-"POT-Creation-Date: 2020-04-08 21:15+0200\n"
+"POT-Creation-Date: 2020-04-08 21:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,6 +213,10 @@ msgstr ""
 
 #: ./arche_tos/templates/list_revoked_users.pt:11
 msgid "Users who've revoked agreements"
+msgstr ""
+
+#: ./arche_tos/templates/list_revoked_users.pt:19
+msgid "Active TOS"
 msgstr ""
 
 #: ./arche_tos/templates/list_revoked_users.pt:22

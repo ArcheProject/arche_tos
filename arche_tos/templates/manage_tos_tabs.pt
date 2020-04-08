@@ -3,7 +3,7 @@
           xmlns:tal="http://xml.zope.org/namespaces/tal"
           xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           tal:define="collapse not view.missing_settings;"
-          i18n:domain="voteit.core">
+          i18n:domain="arche_tos">
     <ul class="nav nav-tabs">
         <li role="presentation" class="${request.view_name == '_manage_tos' and 'active' or None}">
             <a href="${request.resource_url(context, '_manage_tos')}" i18n:translate="">
