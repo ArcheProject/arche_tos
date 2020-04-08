@@ -189,7 +189,8 @@ class TOSManager(object):
                 yield user
             else:
                 logger.warning(
-                    "Set data consent manager userid '%s' doesn't have a valid email address.", userid
+                    "Set data consent manager userid '%s' doesn't have a valid email address.",
+                    userid,
                 )
 
 
@@ -267,22 +268,27 @@ def email_data_consent_managers(event):
                 "site_title": root.title,
                 "tos_link": request.resource_url(root, "_manage_tos"),
             }
-            html = render("arche_tos:templates/email_revoked_consent.pt", values, request)
-            subject = _("revoked_consent_subject",
-                        default="Revoked consent notice from ${title}",
-                        mapping={"title": root.title})
+            html = render(
+                "arche_tos:templates/email_revoked_consent.pt", values, request
+            )
+            subject = _(
+                "revoked_consent_subject",
+                default="Revoked consent notice from ${title}",
+                mapping={"title": root.title},
+            )
             request.send_email(subject, [user.email], html)
 
 
 def protect_enabled_tos(request, context):
-    query = Eq("type_name", "TOS") & Eq("wf_state", "enabled")
-    return request.root.catalog.query(query)
+    if context.wf_state == "enabled":
+        return (context,)
+    return ()
 
 
 def protect_tos_folder(request, context):
     root = request.root
     settings = ITOSSettings(root)
-    if context.uid == settings.get('tos_folder', object()):
+    if context.uid == settings.get("tos_folder", object()):
         return (context,)
     return ()
 
@@ -313,7 +319,7 @@ def includeme(config):
     config.add_ref_guard(
         protect_enabled_tos,
         requires=(ITOS,),
-        catalog_result=True,
+        catalog_result=False,
         allow_move=True,
         title=_("This would delete enabled Terms of service"),
     )
@@ -322,7 +328,9 @@ def includeme(config):
         requires=(IArcheFolder,),
         catalog_result=False,
         allow_move=True,
-        title=_("ref_guard_deleting_marked_folder",
-                default="Deleting the folder marked as base for terms of service isn't allowed. "
-                "See terms of service settings."),
+        title=_(
+            "ref_guard_deleting_marked_folder",
+            default="Deleting the folder marked as base for terms of service isn't allowed. "
+            "See terms of service settings.",
+        ),
     )
