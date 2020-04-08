@@ -63,7 +63,7 @@
                     That person must have administrative priviliges to this site.
                 </li>
                 <li i18n:translate="step_create_tos">
-                    Add TOS to the folder. Remember to pick a date from when they should be active.
+                    Add TOS to the folder. You may pick how that TOS revocation process looks.
                 </li>
                 <li i18n:translate="step_activate_tos">
                     Activate your newly created TOS in the workflow menu visible where you saved it.

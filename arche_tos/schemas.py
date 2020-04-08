@@ -143,9 +143,6 @@ class TOSSchema(colander.Schema):
         widget=deform.widget.RichTextWidget(),
         missing="",
     )
-    date = colander.SchemaNode(
-        colander.Date(), title=_("Required from this date"), default=default_now
-    )
     lang = colander.SchemaNode(
         colander.String(),
         title=_("Only for this language"),

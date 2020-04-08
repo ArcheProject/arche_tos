@@ -25,22 +25,12 @@
             <h4>
                 <a href="${request.resource_url(tos)}">${tos.title}</a>
             </h4>
-            <div class="row">
-                <div class="col-sm-4">
-                    <b i18n:translate="">Start date:</b>
-                    ${tos.date}
-                </div>
-                <div class="col-sm-4">
-                    <b i18n:translate="">State:</b>
-                    ${tos.workflow.state_title}
-                </div>
-                <div class="col-sm-4">
-                    <b i18n:translate="">Currently active:</b>
-                    <span tal:condition="not tos.is_active"
-                          class="glyphicon glyphicon-minus text-warning"></span>
-                    <span tal:condition="tos.is_active"
-                          class="glyphicon glyphicon-ok text-success"></span>
-                </div>
+            <div>
+                <b i18n:translate="">Currently active:</b>
+                <span tal:condition="not tos.is_active"
+                      class="glyphicon glyphicon-minus text-warning"></span>
+                <span tal:condition="tos.is_active"
+                      class="glyphicon glyphicon-ok text-success"></span>
             </div>
             <div tal:condition="tos.is_active" tal:content="structure tos.body"></div>
             <hr/>

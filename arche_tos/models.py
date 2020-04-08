@@ -103,21 +103,16 @@ class TOSManager(object):
 
     def find_tos(self, filter_agreed=True):
         query = Eq("type_name", "TOS") & Eq("wf_state", "enabled")
-        # The date query did not work as expected for me
-        # Investigate this more! /rharms
-        # Le('date', timegm(utcnow().date().timetuple()))
         docids = self.request.root.catalog.query(query)[1]
-        today = utcnow().date()
         for tos in self.request.resolve_docids(docids, perm=None):
             # The language aspect
             if tos.lang and tos.lang != self.request.localizer.locale_name:
                 continue
-            if today >= tos.date:
-                if filter_agreed:
-                    if tos.uid not in self.agreed_tos:
-                        yield tos
-                else:
+            if filter_agreed:
+                if tos.uid not in self.agreed_tos:
                     yield tos
+            else:
+                yield tos
 
     def agree_to(self, seq):
         for tos in seq:

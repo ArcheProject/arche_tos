@@ -21,16 +21,12 @@ class TOS(Content, ContextACLMixin):
     collapse_text = False
     revoke_body = ""
     lang = ""
-    date = None
     check_password_on_revoke = False
     check_typed_on_revoke = False
 
     @property
     def is_active(self):
-        if self.wf_state == "enabled":
-            today = utcnow().date()
-            return self.date is not None and today >= self.date
-        return False
+        return self.wf_state == "enabled"
 
 
 def includeme(config):
