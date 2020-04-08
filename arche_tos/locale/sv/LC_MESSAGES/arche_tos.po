@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-16 11:12+0100\n"
+"POT-Creation-Date: 2020-04-08 21:15+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Robin Harms Oredsson <robin@betahaus.net>\n"
 "Language-Team: \n"
@@ -9,147 +9,236 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3\n"
 
-#: arche_tos/resource.py:13 arche_tos/views.py:171
+#. Default: Revoked consent notice from ${title}
+#: arche_tos/models.py:274
+msgid "revoked_consent_subject"
+msgstr "Notis om tillbakadraget medgivande från ${title}"
+
+#: arche_tos/models.py:324
+msgid "This would delete enabled Terms of service"
+msgstr "Detta skulle radera aktiverade villkor"
+
+#. Default: Deleting the folder marked as base for terms of service isn't
+#. allowed. See terms of service settings.
+#: arche_tos/models.py:331
+msgid "ref_guard_deleting_marked_folder"
+msgstr "Denna folder är bas för alla villkor. Se inställningar för villkor."
+
+#: arche_tos/resource.py:14 arche_tos/views.py:292
+#: arche_tos/templates/manage_tos.pt:11
 msgid "Terms of service"
 msgstr "Användarvillkor"
 
-#: arche_tos/schemas.py:18
+#: arche_tos/schemas.py:23
 msgid "I've read the full agreement and I agree to it"
 msgstr "Jag har läst alla villkor och godkänner dem"
 
-#: arche_tos/schemas.py:19
+#: arche_tos/schemas.py:25
 msgid "You must agree to the terms to use this site."
 msgstr "Du måste acceptera användarvillkoren för att använda sidan."
 
-#: arche_tos/schemas.py:23
+#: arche_tos/schemas.py:30
 msgid "I understand the consequences"
 msgstr "Jag förstår konsekvenserna"
 
-#: arche_tos/schemas.py:34
+#: arche_tos/schemas.py:40
 msgid "Wrong sentence"
 msgstr "Fel mening"
 
-#: arche_tos/schemas.py:40
+#: arche_tos/schemas.py:46
 #, python-format
 msgid "Type '${sentence}' to confirm that you want to do this."
 msgstr "Skriv '${sentence}' för att bekräfta att du vill göra detta."
 
-#: arche_tos/schemas.py:47
+#: arche_tos/schemas.py:55
 msgid "Type confirmation"
 msgstr "Skriv bekräftelse"
 
-#: arche_tos/schemas.py:53
+#: arche_tos/schemas.py:61
 msgid "I understand the consequences and want to revoke my agreement."
 msgstr ""
 "Jag förstår konsekvenserna och vill återkalla mitt medgivande till villkoren."
 
-#: arche_tos/schemas.py:54
+#: arche_tos/schemas.py:63
 msgid "Read above and tick here if you want to do this."
 msgstr "Läs ovan och klicka i här om du vill göra det här."
 
-#: arche_tos/schemas.py:58
+#: arche_tos/schemas.py:68
 msgid "Password check due to severe consequences of revoking this"
 msgstr "Kolla lösenord pga grava konsekvenser av tillbakadraget medgivande"
 
-#: arche_tos/schemas.py:93
+#: arche_tos/schemas.py:103
 msgid "Any language"
 msgstr "Alla språk"
 
-#: arche_tos/schemas.py:106
+#: arche_tos/schemas.py:116
 #, python-format
 msgid "Require typing '${sentence}' on revoke."
 msgstr "Kräv att skriva ’${sentence}’ vid återkallat samtycke."
 
-#: arche_tos/schemas.py:113
+#: arche_tos/schemas.py:123
 msgid "Title"
 msgstr "Titel"
 
-#: arche_tos/schemas.py:117
+#: arche_tos/schemas.py:126
 msgid "Text to agree to"
 msgstr "Text att ge sitt medgivande till"
 
-#: arche_tos/schemas.py:122
+#: arche_tos/schemas.py:131
 msgid "Collapse agreement text?"
 msgstr "Kollapsa villkorstext?"
 
-#: arche_tos/schemas.py:123
+#: arche_tos/schemas.py:132
 msgid "Causes a read full text link to be displayed instead."
 msgstr "Skapar länk för att läsa hela avtalet istället för att visa det."
 
-#: arche_tos/schemas.py:127 arche_tos/templates/revoke_tos_consequence.pt:12
+#: arche_tos/schemas.py:136 arche_tos/templates/revoke_tos_consequence.pt:12
 msgid "Consequences of revoking the agreement"
 msgstr "Konsekvenser av återkallat medgivande"
 
 #. Default: Will be displayed when the revocation form is shown to inform of
 #. the consequences. If the conseqences are severe, please do express that
 #. here!
-#: arche_tos/schemas.py:128
+#: arche_tos/schemas.py:137
 msgid "revoke_body_description"
 msgstr ""
 "Syns när formuläret för återkallande visas för att informera om "
 "konsekvenser. Om konsekvenserna är allvarliga, vänligen uttryck det här!"
 
-#: arche_tos/schemas.py:137
-msgid "Required from this date"
-msgstr "Krävs från och med detta datum"
-
-#: arche_tos/schemas.py:142
+#: arche_tos/schemas.py:148
 msgid "Only for this language"
 msgstr "Bara för detta språk"
 
-#: arche_tos/schemas.py:143
+#: arche_tos/schemas.py:149
 msgid "If set, only show this agreement for users using this lang."
 msgstr "Om vald, visa bara villkoret för användare som använder detta språk."
 
-#: arche_tos/schemas.py:150
+#: arche_tos/schemas.py:156
 msgid "Require password check on revoke"
 msgstr "Kräv lösenord för återkallat medgivande"
 
-#: arche_tos/schemas.py:151 arche_tos/schemas.py:157
+#: arche_tos/schemas.py:157 arche_tos/schemas.py:163
 msgid "This will only be enforced for enabled TOS"
 msgstr "Detta krävs bara för aktiva användarvillkor"
 
-#: arche_tos/views.py:25
+#. Default: The following users don't have the permission to manage users on
+#. this site: '${users}' Perhaps they aren't admins?
+#: arche_tos/schemas.py:183
+msgid "users_arent_admins_error"
+msgstr ""
+"Följande användare har inte rätt att hantera användare \n"
+"på sidan: ’${users}’ De kanske inte är administratörer?"
+
+#. Default: ${userid} doesn't have an email address set.
+#: arche_tos/schemas.py:192
+msgid "user_bad_email_error"
+msgstr "${userid} har inte en giltig epostadress."
+
+#: arche_tos/schemas.py:203
+msgid "Data Consent Manager(s)"
+msgstr "Personuppgiftsadministratör(er)"
+
+#: arche_tos/schemas.py:204
+msgid "Users handling consent issues - must have administrator rights"
+msgstr ""
+"Användare som hanterar samtyckesfrågor - måste ha administratörsrättigheter"
+
+#: arche_tos/schemas.py:210
+msgid "Notify via email?"
+msgstr "Notifiera med epost?"
+
+#. Default: Email consent managers when a user revokes an important agreement.
+#: arche_tos/schemas.py:211
+msgid "email_consent_managers_desc"
+msgstr ""
+"Eposta personuppgiftsadministratör(er) när en användare drar tillbaka sitt "
+"medgivande från ett viktigt villkor."
+
+#: arche_tos/schemas.py:218
+msgid "Folder to place TOS in"
+msgstr "Folder att placera villkor i"
+
+#. Default: If you don't have any folders yet, create one in the root of your
+#. site.
+#: arche_tos/schemas.py:219
+msgid "tos_folder_schema_description"
+msgstr "Om det inte finns några foldrar än, skapa en i roten på webbsidan."
+
+#: arche_tos/views.py:65
 msgid "New terms require your attention"
 msgstr "Nya villkor kräver åtgärd"
 
-#: arche_tos/views.py:26
+#: arche_tos/views.py:66
 msgid "Agree"
 msgstr "Godkänn"
 
-#: arche_tos/views.py:41
+#: arche_tos/views.py:79
 msgid "Thank you!"
 msgstr "Tack!"
 
-#: arche_tos/views.py:72
+#: arche_tos/views.py:109
 msgid "Revoke agreement"
 msgstr "Återkalla medgivande"
 
-#: arche_tos/views.py:79
+#: arche_tos/views.py:116
 msgid "Revoke"
 msgstr "Återkalla"
 
-#: arche_tos/views.py:93
+#: arche_tos/views.py:126
 msgid "Agreement not found"
 msgstr "Villkoret hittas inte"
 
 #. Default: You've revoked your consent. Note that this website will not be
 #. usable without agreeing to these terms.
-#: arche_tos/views.py:106
+#: arche_tos/views.py:141
 msgid "revoked_consent_enabled_tos"
 msgstr ""
 "Du har tagit tillbaka ditt medgivande. Notera att webbsidan inte kommer gå "
 "att använda utan att godkänna användaravtal."
 
-#: arche_tos/views.py:111
-msgid "You've revoked your consent."
-msgstr "Du har återkallat ditt medgivande."
+#. Default: You've revoked your consent to terms that were marked as inactive.
+#: arche_tos/views.py:148
+msgid "revoked_consent_inactive_tos"
+msgstr ""
+"Du har dragit tillbaka ditt medgivande till villkor som inte längre gällde."
 
-#: arche_tos/views.py:126
+#: arche_tos/views.py:209
+msgid "No changes made"
+msgstr "Inga ändringar gjorda"
+
+#: arche_tos/views.py:223
 msgid "You need to accept the terms to use this site."
 msgstr "Du behöver acceptera användarvillkoren för att använda sidan."
+
+#: arche_tos/views.py:299
+msgid "Manage TOS"
+msgstr "Hantera villkor"
+
+#: arche_tos/templates/list_revoked_users.pt:11
+msgid "Users who've revoked agreements"
+msgstr "Användare som återkallat sitt medgivande"
+
+#: arche_tos/templates/list_revoked_users.pt:22
+msgid "Nothing active"
+msgstr "Inget aktivt"
+
+#: arche_tos/templates/list_revoked_users.pt:36
+msgid "UserID"
+msgstr "AnvändarID"
+
+#: arche_tos/templates/list_revoked_users.pt:37
+msgid "Name"
+msgstr "Namn"
+
+#: arche_tos/templates/list_revoked_users.pt:38
+msgid "Email"
+msgstr "Epost"
+
+#: arche_tos/templates/list_revoked_users.pt:39
+msgid "Revoked"
+msgstr "Återkallat"
 
 #: arche_tos/templates/tos_body.pt:10
 msgid "Expand full agreement..."
@@ -167,13 +256,189 @@ msgstr "Du har inte godkänt några användarvillkor"
 msgid "You agreed to this on ${date}"
 msgstr "Du gav ditt medgivande till detta ${date}"
 
-#: arche_tos/templates/agreed_tos.pt:48
+#: arche_tos/templates/agreed_tos.pt:28 arche_tos/templates/agreed_tos.pt:48
 msgid "Revoke agreement..."
 msgstr "Återkalla medgivande…"
 
 #: arche_tos/templates/agreed_tos.pt:59
 msgid "Back to profile"
 msgstr "Tillbaka till profil"
+
+#: arche_tos/templates/email_revoked_consent.pt:7
+msgid "Hello ${user.title},"
+msgstr "Hej ${user.title},"
+
+#. Default: You get this notice since you're Data Consent Manager for
+#. ${site_title}.
+#: arche_tos/templates/email_revoked_consent.pt:9
+msgid "why_data_consent_email_notice"
+msgstr ""
+"Du får detta meddelande eftersom du är personuppgiftsadministratör för "
+"${site_title}."
+
+#. Default: ${username} has revoked their agreement to the following terms of
+#. service:
+#: arche_tos/templates/email_revoked_consent.pt:12
+msgid "user_has_revoked"
+msgstr "${username} har dragit tillbaka sitt medgivande till följande villkor:"
+
+#. Default: You may need to purge data from your instance. Please see
+#. ${tos_link} for overview of terms, users who've revoked important terms and
+#. general settings. You need to login first if you aren't already. Click
+#. settings if you wish to change email notification settings.
+#: arche_tos/templates/email_revoked_consent.pt:20
+msgid "admin_email_actions"
+msgstr ""
+"Du kan behöva rensa data från er sida. Se ${tos_link} för en översikt ar "
+"villkor, användare som dragit tillbaka sitt medgivande till viktiga villkor "
+"och generella inställningar. Du kan behöva logga in först. Klicka "
+"inställningar om du vill ändra inställningarna för epostnotifiering."
+
+#: arche_tos/templates/manage_tos.pt:21
+msgid "Nothing created yet"
+msgstr "Inget skapat än"
+
+#: arche_tos/templates/manage_tos.pt:29
+msgid "Currently active:"
+msgstr "Aktiva nu:"
+
+#: arche_tos/templates/manage_tos_tabs.pt:9
+msgid "Overview"
+msgstr "Översikt"
+
+#: arche_tos/templates/manage_tos_tabs.pt:15
+msgid "Add"
+msgstr "Lägg till"
+
+#: arche_tos/templates/manage_tos_tabs.pt:20
+msgid "List users who revoked"
+msgstr "Användare med tillbakadragna medgivanden"
+
+#: arche_tos/templates/manage_tos_tabs.pt:28
+msgid "Settings"
+msgstr "Inställningar"
+
+#: arche_tos/templates/manage_tos_tabs.pt:38
+msgid "Help"
+msgstr "Hjälp"
+
+#: arche_tos/templates/manage_tos_tabs.pt:47
+msgid "How to start"
+msgstr "Hur ni startar"
+
+#. Default: Step by step instructions to set up terms. If you're not familiar
+#. with any of the concepts here, please ask the people running this site for
+#. help. You should not do this unless you know what you're doing, since Terms
+#. of service (from now on TOS) will change the way this website works. As soon
+#. as they’re activated, every user, except administrators, has to comply with
+#. the terms to use the site.
+#: arche_tos/templates/manage_tos_tabs.pt:48
+msgid "help_intro_tos"
+msgstr ""
+"Stegvis instruktion för att lägga in villkor. Om du inte är bekant med "
+"koncepten här så fråga de som driftar sidan om hjälp.\n"
+"Gör bara detta om du är införstådd med konsekvenserna, eftersom hanteringen "
+"av villkor ändrar sättet som webbsidan fungerar.\n"
+"Så fort de är aktiverade så kommer varje användare, utom administratörer, "
+"att behöva godkänna villkoren för att använda sidan."
+
+#. Default: Create a folder within the root that will contain your terms of
+#. service (TOS).
+#: arche_tos/templates/manage_tos_tabs.pt:57
+msgid "step_create_folder"
+msgstr "Skapa en folder i roten som ska innehålla villkoren."
+
+#. Default: Go to settings here and select your folder where it says "Folder to
+#. place TOS in". Also pick the person(s) responsible for handling data consent
+#. issues - the Data Consent Manager. That person must have administrative
+#. priviliges to this site.
+#: arche_tos/templates/manage_tos_tabs.pt:60
+msgid "step_change_settings"
+msgstr ""
+"Gå till inställningar här och välj folder där det står ”Folder att placera "
+"villkor i”. Välj också en eller flera som ska vara "
+"personuppgiftsadministratör. De personerna måste ha "
+"administratörsrättigheter här."
+
+#. Default: Add TOS to the folder. You may pick how that TOS revocation process
+#. looks.
+#: arche_tos/templates/manage_tos_tabs.pt:65
+msgid "step_create_tos"
+msgstr ""
+"Lägg till villkor i foldern. Du kan välja hur processen för att dra tillbaka "
+"sitt medgivande ska gå till per villkor."
+
+#. Default: Activate your newly created TOS in the workflow menu visible where
+#. you saved it.
+#: arche_tos/templates/manage_tos_tabs.pt:68
+msgid "step_activate_tos"
+msgstr ""
+"Aktivera villkoret du just skapade i menyn för arbetsflöde. Den syns på "
+"samma sida som villkoret."
+
+#. Default: Remember, don't edit your old TOS in case you need to make major
+#. changes. Simply add a new TOS and mark the old one as disabled.
+#: arche_tos/templates/manage_tos_tabs.pt:71
+msgid "step_change_tos"
+msgstr ""
+"Kom ihåg, gör inga signifikanta ändringar i gamla villkor. I så fall lägg "
+"till ett nytt villkor och avaktivera det gamla."
+
+#: arche_tos/templates/manage_tos_tabs.pt:77
+msgid "Terminology help, relevant to GDPR mostly."
+msgstr "Terminologi, mestadels relevant för GDPR."
+
+#: arche_tos/templates/manage_tos_tabs.pt:80
+msgid "Data Controller"
+msgstr "Personuppgiftsansvarig"
+
+#. Default: The organisation owning this instance.
+#: arche_tos/templates/manage_tos_tabs.pt:81
+msgid "data_controller_help"
+msgstr "Organisationen som äger denna sida."
+
+#: arche_tos/templates/manage_tos_tabs.pt:84
+msgid "Data Processor"
+msgstr "Personuppgiftsbiträde"
+
+#. Default: Anyone with access to this data that for instance helps you run
+#. this site.
+#: arche_tos/templates/manage_tos_tabs.pt:85
+msgid "data_processor_help"
+msgstr "Alla med tillgång till data, t.ex. någon som hjälper er hantera sidan."
+
+#: arche_tos/templates/manage_tos_tabs.pt:88
+msgid "Data Consent Manager"
+msgstr "Personuppgiftsadministratör"
+
+#. Default: The person(s) in your organisation responsible for handling data
+#. issues, for instance complying with a users request to have their data
+#. scrubbed.
+#: arche_tos/templates/manage_tos_tabs.pt:89
+msgid "data_consent_manager_help"
+msgstr ""
+"Person(er) i er organisation som ansvarar för att hantera "
+"personuppgiftsfrågor, t.ex. hantera en användares begäran om att få sin data "
+"borttagen."
+
+#: arche_tos/templates/manage_tos_tabs.pt:93
+msgid "Data Subject"
+msgstr "Registrerad"
+
+#. Default: A member here, basically any registered user.
+#: arche_tos/templates/manage_tos_tabs.pt:94
+msgid "data_subject_help"
+msgstr "En medlem på sidan, i princip vilken registrerad användare som helst."
+
+#: arche_tos/templates/manage_tos_tabs.pt:100
+msgid "Close"
+msgstr "Stäng"
+
+#~ msgid "Required from this date"
+#~ msgstr "Krävs från och med detta datum"
+
+#~ msgid "You've revoked your consent."
+#~ msgstr "Du har återkallat ditt medgivande."
 
 #~ msgid "Site terms"
 #~ msgstr "Användarvillkor"

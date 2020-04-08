@@ -11,7 +11,7 @@
   </p>
   <p i18n:translate="user_has_revoked">
     <tal:ts i18n:name="username">${revoked_user.title} (revoked_user.userid)</tal:ts>
-    has revoked their agreement to the following terms of serice:
+    has revoked their agreement to the following terms of service:
   </p>
   <ul>
     <li tal:repeat="tos revoked_tos">${tos.title}</li>

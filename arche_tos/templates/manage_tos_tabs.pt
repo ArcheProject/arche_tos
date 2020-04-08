@@ -57,7 +57,7 @@
                 <li i18n:translate="step_create_folder">
                     Create a folder within the root that will contain your terms of service (TOS).
                 </li>
-                <li i18n:translate="step_change_settingsr">
+                <li i18n:translate="step_change_settings">
                     Go to settings here and select your folder where it says "Folder to place TOS in".
                     Also pick the person(s) responsible for handling data consent issues - the Data Consent Manager.
                     That person must have administrative priviliges to this site.
