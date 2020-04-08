@@ -2,6 +2,7 @@
 from datetime import timedelta
 from logging import getLogger
 
+from arche.interfaces import IArcheFolder
 from arche.interfaces import IBaseView
 from arche.interfaces import IRoot
 from arche.interfaces import IUser
@@ -23,6 +24,7 @@ from arche_tos.fanstatic_lib import terms_modal
 from arche_tos.interfaces import IAgreedTOS
 from arche_tos.interfaces import IImportantAgreementsRevoked
 from arche_tos.interfaces import IRevokedTOS
+from arche_tos.interfaces import ITOS
 from arche_tos.interfaces import ITOSManager
 from arche_tos.interfaces import ITOSSettings
 from arche_tos import _
@@ -277,6 +279,19 @@ def email_data_consent_managers(event):
             request.send_email(subject, [user.email], html)
 
 
+def protect_enabled_tos(request, context):
+    query = Eq("type_name", "TOS") & Eq("wf_state", "enabled")
+    return request.root.catalog.query(query)
+
+
+def protect_tos_folder(request, context):
+    root = request.root
+    settings = ITOSSettings(root)
+    if context.uid == settings.get('tos_folder', object()):
+        return (context,)
+    return ()
+
+
 def includeme(config):
     """
     Include components
@@ -300,3 +315,19 @@ def includeme(config):
     config.registry.registerAdapter(TOSSettings)
     config.add_subscriber(check_terms, [IBaseView, IViewInitializedEvent])
     config.add_subscriber(email_data_consent_managers, IImportantAgreementsRevoked)
+    config.add_ref_guard(
+        protect_enabled_tos,
+        requires=(ITOS,),
+        catalog_result=True,
+        allow_move=True,
+        title=_("This would delete enabled Terms of service"),
+    )
+    config.add_ref_guard(
+        protect_tos_folder,
+        requires=(IArcheFolder,),
+        catalog_result=False,
+        allow_move=True,
+        title=_("ref_guard_deleting_marked_folder",
+                default="Deleting the folder marked as base for terms of service isn't allowed. "
+                "See terms of service settings."),
+    )

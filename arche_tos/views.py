@@ -17,11 +17,13 @@ from pyramid.httpexceptions import HTTPNotFound
 from pyramid.renderers import render
 from pyramid.response import Response
 from pyramid.security import forget
+from repoze.catalog.query import Eq
 
 from arche_tos import _
 from arche_tos.exceptions import TermsNotAccepted
-from arche_tos.interfaces import ITOS, ITOSSettings
+from arche_tos.interfaces import ITOS
 from arche_tos.interfaces import ITOSManager
+from arche_tos.interfaces import ITOSSettings
 
 
 class TOSMixin(object):
@@ -34,14 +36,27 @@ class TOSMixin(object):
         return sorted(self.tos_manager.find_tos(), key=lambda x: x.title.lower())
 
     @reify
+    def settings(self):
+        return dict(ITOSSettings(self.request.root))
+
+    @reify
     def missing_settings(self):
-        settings = ITOSSettings(self.request.root)
         schema = self.request.get_schema(self.request.root, 'TOS', 'settings')
         try:
-            self.request.validate_appstruct(schema, dict(settings))
+            self.request.validate_appstruct(schema, self.settings)
             return False
         except colander.Invalid:
             return True
+
+    def all_tos(self):
+        """ Regardless of active etc. """
+        docids = self.request.root.catalog.query(Eq("type_name", "TOS"), sort_index="sortable_title")[1]
+        return self.request.resolve_docids(docids, perm=None)
+
+    @reify
+    def tos_folder(self):
+        if not self.missing_settings:
+            return self.request.resolve_uid(self.settings["tos_folder"])
 
 
 class TOSForm(BaseForm, TOSMixin):

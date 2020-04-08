@@ -1,25 +1,100 @@
 <tal:main xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="voteit.core">
-  <ul class="nav nav-tabs">
-    <li role="presentation" class="${request.view_name == '_manage_tos' and 'active' or None}">
-      <a href="${request.resource_url(context, '_manage_tos')}" i18n:translate="">
-        Overview
-      </a>
-    </li>
-    <li role="presentation" class="${request.view_name == '_list_revoked_tos_users' and 'active' or None}">
-      <a href="${request.resource_url(context, '_list_revoked_tos_users')}" i18n:translate="">
-        List users who revoked
-      </a>
-    </li>
-    <li role="presentation" class="${request.view_name == '_tos_settings' and 'active' or None}">
-      <a href="${request.resource_url(context, '_tos_settings')}">
+          xmlns:metal="http://xml.zope.org/namespaces/metal"
+          xmlns:tal="http://xml.zope.org/namespaces/tal"
+          xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          tal:define="collapse not view.missing_settings;"
+          i18n:domain="voteit.core">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="${request.view_name == '_manage_tos' and 'active' or None}">
+            <a href="${request.resource_url(context, '_manage_tos')}" i18n:translate="">
+                Overview
+            </a>
+        </li>
+        <li role="presentation" tal:condition="view.tos_folder">
+            <a href="${request.resource_url(view.tos_folder, 'add', query={'content_type': 'TOS', 'came_from': request.url})}"
+               i18n:translate="">
+                Add
+            </a>
+        </li>
+        <li role="presentation" class="${request.view_name == '_list_revoked_tos_users' and 'active' or None}">
+            <a href="${request.resource_url(context, '_list_revoked_tos_users')}" i18n:translate="">
+                List users who revoked
+            </a>
+        </li>
+        <li role="presentation" class="${request.view_name == '_tos_settings' and 'active' or None}">
+            <a href="${request.resource_url(context, '_tos_settings')}">
         <span tal:condition="view.missing_settings"
               class="glyphicon glyphicon-warning-sign"></span>
-        <tal:ts i18n:translate="">Settings</tal:ts>
-      </a>
-    </li>
-  </ul>
+                <tal:ts i18n:translate="">Settings</tal:ts>
+            </a>
+        </li>
+        <li role="presentation">
+            <a data-toggle="collapse"
+               href="#tos-help-collapse"
+               aria-expanded="${collapse and 'false' or 'true'}"
+               class="${collapse and 'collapsed' or ''}"
+               aria-controls="tos-help-collapse">
+                <span class="glyphicon glyphicon-question-sign"></span>
+                <tal:ts i18n:translate="">Help</tal:ts>
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="${collapse and 'collapse' or 'collapse in'}" aria-expanded="${collapse and 'false' or 'true'}"
+         id="tos-help-collapse">
+        <div class="well">
+            <h4 i18n:translate="">How to start</h4>
+            <p i18n:translate="help_intro_tos">
+                Step by step instructions to set up terms. If you're not familiar with any of the concepts here,
+                please ask the people running this site for help.
+                You should not do this unless you know what you're doing, since Terms of service
+                (from now on TOS) will change the way this website works. As soon as they're activated,
+                every user has to comply with the terms to use the site, except for administrators.
+            </p>
+            <ul>
+                <li i18n:translate="step_create_folder">
+                    Create a folder within the root that will contain your terms of service (TOS).
+                </li>
+                <li i18n:translate="step_change_settingsr">
+                    Go to settings here and select your folder where it says "Folder to place TOS in".
+                    Also pick the person(s) responsible for handling data consent issues - the Data Consent Manager.
+                    That person must have administrative priviliges to this site.
+                </li>
+                <li i18n:translate="step_create_tos">
+                    Add TOS to the folder. Remember to pick a date from when they should be active.
+                </li>
+                <li i18n:translate="step_activate_tos">
+                    Activate your newly created TOS in the workflow menu visible where you saved it.
+                </li>
+            </ul>
+
+            <h4 i18n:translate="">Terminology help, relevant to GDPR mostly.</h4>
+
+            <dl>
+                <dt i18n:translate="">Data Controller</dt>
+                <dd i18n:translate="data_controller_help">
+                    The organisation owning this instance.
+                </dd>
+                <dt i18n:translate="">Data Processor</dt>
+                <dd i18n:translate="data_processor_help">
+                    Anyone with access to this data that for instance helps you run this site.
+                </dd>
+                <dt i18n:translate="">Data Consent Manager</dt>
+                <dd i18n:translate="data_consent_manager_help">
+                    The person(s) in your organisation responsible for handling data issues,
+                    for instance complying with a users request to have their data scrubbed.
+                </dd>
+                <dt i18n:translate="">Data Subject</dt>
+                <dd i18n:translate="data_subject_help">A member here, basically any registered user.</dd>
+            </dl>
+
+            <a data-toggle="collapse"
+               href="#tos-help-collapse" aria-expanded="false" class="btn btn-default"
+               aria-controls="tos-help-collapse">
+                <tal:ts i18n:translate="">Close</tal:ts>
+            </a>
+
+        </div>
+    </div>
 </tal:main>

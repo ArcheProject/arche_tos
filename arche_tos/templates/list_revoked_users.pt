@@ -5,6 +5,7 @@
       metal:use-macro="view.macro('arche:templates/master.pt', 'arche:templates/inline.pt')"
       i18n:domain="arche_tos">
 <body>
+<tal:blank metal:fill-slot="actionbar"></tal:blank>
 <div metal:fill-slot="content">
 
     <h1 i18n:translate="">

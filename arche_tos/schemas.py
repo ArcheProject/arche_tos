@@ -6,7 +6,7 @@ from arche.schemas import maybe_modal_form
 from arche.security import PERM_MANAGE_USERS
 from arche.security import principal_has_permisson
 from arche.validators import deferred_current_password_validator
-from arche.widgets import UserReferenceWidget
+from arche.widgets import UserReferenceWidget, ReferenceWidget
 from pyramid.traversal import find_root
 
 from arche_tos import _
@@ -215,6 +215,13 @@ class TOSSettingsSchema(colander.Schema):
             "email_consent_managers_desc",
             default="Email consent managers when a user revokes an important agreement.",
         ),
+    )
+    tos_folder = colander.SchemaNode(
+        colander.String(),
+        title = _("Folder to place TOS in"),
+        description=_("tos_folder_schema_description",
+                      default="If you don't have any folders yet, create one in the root of your site."),
+        widget=ReferenceWidget(multiple=False, query_params={"type_name": "Folder"})
     )
 
 

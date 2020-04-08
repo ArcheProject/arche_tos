@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from arche.utils import utcnow
 from zope.interface import implementer
 from arche.resources import Content
 from arche.resources import ContextACLMixin
@@ -23,6 +24,13 @@ class TOS(Content, ContextACLMixin):
     date = None
     check_password_on_revoke = False
     check_typed_on_revoke = False
+
+    @property
+    def is_active(self):
+        if self.wf_state == "enabled":
+            today = utcnow().date()
+            return self.date is not None and today >= self.date
+        return False
 
 
 def includeme(config):
