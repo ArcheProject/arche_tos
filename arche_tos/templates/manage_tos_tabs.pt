@@ -49,8 +49,9 @@
                 Step by step instructions to set up terms. If you're not familiar with any of the concepts here,
                 please ask the people running this site for help.
                 You should not do this unless you know what you're doing, since Terms of service
-                (from now on TOS) will change the way this website works. As soon as they're activated,
-                every user has to comply with the terms to use the site, except for administrators.
+                (from now on TOS) will change the way this website works.
+                As soon as they’re activated,
+                every user, except administrators, has to comply with the terms to use the site.
             </p>
             <ul>
                 <li i18n:translate="step_create_folder">
@@ -66,6 +67,10 @@
                 </li>
                 <li i18n:translate="step_activate_tos">
                     Activate your newly created TOS in the workflow menu visible where you saved it.
+                </li>
+                <li i18n:translate="step_change_tos">
+                    Remember, don't edit your old TOS in case you need to make major changes.
+                    Simply add a new TOS and mark the old one as disabled.
                 </li>
             </ul>
 
