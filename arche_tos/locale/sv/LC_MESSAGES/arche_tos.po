@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-08 21:31+0200\n"
+"POT-Creation-Date: 2020-04-09 13:25+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Robin Harms Oredsson <robin@betahaus.net>\n"
 "Language-Team: \n"
@@ -67,7 +67,8 @@ msgstr "Läs ovan och klicka i här om du vill göra det här."
 
 #: arche_tos/schemas.py:68
 msgid "Password check due to severe consequences of revoking this"
-msgstr "Kolla lösenord pga grava konsekvenser av återkallat samtycke"
+msgstr ""
+"Lösenordskontroll med anledning av grava konsekvenser av återkallat samtycke"
 
 #: arche_tos/schemas.py:103
 msgid "Any language"
@@ -76,7 +77,7 @@ msgstr "Alla språk"
 #: arche_tos/schemas.py:116
 #, python-format
 msgid "Require typing '${sentence}' on revoke."
-msgstr "Kräv att skriva ’${sentence}’ vid återkallat samtycke."
+msgstr "Kräv att användaren skriver ‘${sentence}’ för att återkalla samtycke."
 
 #: arche_tos/schemas.py:123
 msgid "Title"
@@ -279,17 +280,17 @@ msgstr ""
 "Du får detta meddelande eftersom du är personuppgiftsadministratör för "
 "${site_title}."
 
-#. Default: ${username} has revoked their agreement to the following terms of
+#. Default: A user has revoked their agreement to the following terms of
 #. service:
 #: arche_tos/templates/email_revoked_consent.pt:12
 msgid "user_has_revoked"
-msgstr "${username} har återkallat sitt samtycke till följande villkor:"
+msgstr "En användare har återkallat sitt samtycke till följande villkor:"
 
 #. Default: You may need to purge data from your instance. Please see
 #. ${tos_link} for overview of terms, users who've revoked important terms and
 #. general settings. You need to login first if you aren't already. Click
 #. settings if you wish to change email notification settings.
-#: arche_tos/templates/email_revoked_consent.pt:20
+#: arche_tos/templates/email_revoked_consent.pt:19
 msgid "admin_email_actions"
 msgstr ""
 "Du kan behöva rensa data från er sida. Se ${tos_link} för en översikt ar "
