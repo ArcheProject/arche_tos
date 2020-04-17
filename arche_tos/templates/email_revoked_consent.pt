@@ -7,7 +7,8 @@
   <h1 i18n:translate="">Hello ${user.title},</h1>
 
   <p i18n:translate="why_data_consent_email_notice">
-    You get this notice since you're Data Consent Manager for ${site_title}.
+    You get this notice since you're Data Consent Manager for
+    <tal:ts i18n:name="site_title">${site_title}</tal:ts>.
   </p>
   <p i18n:translate="user_has_revoked">
     A user has revoked their agreement to the following terms of service:
